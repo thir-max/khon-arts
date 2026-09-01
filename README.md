@@ -1,47 +1,51 @@
-# 🎭 KHON — THE LIVING MASK (3D Digital Exhibition)
+# 🎭 KHON — THE LIVING MASK (3D Digital Exhibition V7)
 
-**KHON (โขน)** คือโปรเจกต์นิทรรศการดิจิทัลเชิงโต้ตอบ (Interactive Online Art Exhibition) ที่นำเสนอศิลปะการแสดงโขนไทยตามจารีตกรมศิลปากร ผ่านมุมมอง **Dark Thai Contemporary** ผสมผสานเทคโนโลยี **3D Canvas Interactive** และระบบควบคุมอินเทอร์เฟซด้วยภาษามือไร้สัมผัส (**MediaPipe Hand Tracking**)
+**KHON (โขน)** คือนิทรรศการดิจิทัลเชิงโต้ตอบ (Interactive Online Art Exhibition) ที่ถ่ายทอดมรดกหัวโขนไทยตามจารีตกรมศิลปากร สู่ประสบการณ์สื่อรำแบบ **Dark Thai Contemporary** ผสมผสานโมเดลสามมิติเสมือนจริงแบบ 3D Canvas Interactive และระบบควบคุมไร้สัมผัสผ่านกล้องด้วย **MediaPipe Hand Tracking**
 
 ---
 
-## ✨ มีอะไรใหม่ในเวอร์ชันนี้ (V5 Fine Arts Edition)
+## ✨ คุณสมบัติสำคัญใน V7 (Realism & Adaptive Icon Edition)
 
-* **🎨 Dark Thai Contemporary Aesthetics:** ดีไซน์หน้าเว็บใหม่สไตล์พิพิธภัณฑ์ศิลปะร่วมสมัย โทนสี ดำหมึก (Ink Black), แดงเลือดหมู (Deep Burgundy) และทองโบราณ (Antique Gold)
-* **🏛️ คลังข้อมูลตามจารีตกรมศิลปากร:** รวบรวมอัตลักษณ์หัวโขน สีกาย มงกุฎ และนาฏยศัพท์ของตัวละครสำคัญ (พระราม, นางสีดา, หนุมาน, ทศกัณฐ์, พิเภก) ตามคัมภีร์นาฏศิลป์ไทย
-* **🧊 3D Interactive Character:** แสดงผลชฎาและหน้ากากโขนแบบ 3D Canvas ขยับหมุนตามทิศทางเมาส์และลอยตัวแบบ Real-time ด้วย Three.js
-* **📖 Editorial Layout & Detail Modal:** จัดวางเลย์เอาต์สไตล์นิตยสารศิลปะ สรุปเนื้อหาสำคัญ และมีปุ่ม Glassmorphism กดเพื่อเปิด Modal อ่านรายละเอียดเชิงลึก
-* **✋ Minimal Hand Control Dock:** กล้องตรวจจับท่าทางมินิมอลที่มุมจอ สามารถสั่งการซูมเข้า-ออก และเลื่อนหน้าเว็บได้อย่างเสถียร
+* **🎭 Highly Detailed 3D Khon Mask Model:** ปรับปรุงโครงสร้าง Three.js 3D Model ขึ้นรูปองค์ประกอบหัวโขนพระรามตามแบบแผนจารีต (มงกุฎชัยย่อมุม, จอนหูกนก, คิ้ว/ตามงกุฎ) พร้อมสมมติการใช้วัสดุรัก-ทองคำแท้ (Metallic Gold & Deep Burgundy Lacquer) และการจัดแสง Studio Three-Point Lighting เสริมความสมจริง
+* **🖐️ Real-time Adaptive Hand Icon:** ปุ่มเปิด-ปิดกล้องที่มุมขวาล่างจะเปลี่ยนสัญลักษณ์ไอคอนตามท่าทางมือที่ตรวจจับได้จากกล้องทันที:
+  * 🖐️ **กางมือ:** ไอคอนเปลี่ยนเป็น 🖐️ (สั่งการ Zoom In)
+  * ✊ **กำมือ:** ไอคอนเปลี่ยนเป็น ✊ (สั่งการ Zoom Out)
+  * ✋ **สถานะปกติ:** ไอคอนเป็น ✋
+* **🎮 Integrated Quiz Challenge:** นำระบบเกมทายตัวละครจากเอกลักษณ์หัวโขนกลับมาใช้งานได้แบบ Real-time พร้อมแสดงคำอธิบายเฉลยเชิงลึก
+* **🏛️ Fine Arts Department Archives:** รวบรวมอัตลักษณ์สีกาย มงกุฎ ท่ารำของตัวละครสำคัญ (พระราม, นางสีดา, หนุมาน, ทศกัณฐ์, พิเภก) และกระบวนการทำหัวโขนของช่างสิบหมู่
+* **📖 Glassmorphism Modal Detail:** อ่านเนื้อหาฉบับเต็มของแต่ละตัวละครผ่านหน้าต่างป๊อปอัปแบบกระจกฝ้าได้เรียบลื่น
 
 ---
 
 ## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
 
-* **Frontend:** HTML5, CSS3 (Glassmorphism & Thai Typography Layout), JavaScript (ES6+)
-* **3D Graphics:** [Three.js](https://threejs.org/) (WebGL Rendering)
-* **AI & Computer Vision:** [MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands.html)
-* **Fonts:** Google Fonts (`Prompt` สำหรับภาษาไทยโมเดิร์น และ `Cinzel` สำหรับ Typography สไตล์ Display)
+* **Frontend:** HTML5, CSS3 (Glassmorphism & Thai Typography Hierarchy), JavaScript (ES6+)
+* **3D Graphics Engine:** [Three.js](https://threejs.org/) (WebGL Rendering, Custom Mesh Geometry, Studio Lighting)
+* **Computer Vision:** [MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands.html) & Camera Utils
+* **Fonts:** Google Fonts (`Prompt` สำหรับภาษาไทยโครงสร้างหลัก และ `Cinzel` สำหรับ Typography สไตล์ Display)
 
 ---
 
-## ✋ การสั่งงานด้วยท่าทางมือ (Gesture Controls)
+## ✋ การสั่งงานด้วยภาษามือ (Hand Gesture Controls)
 
-| ท่าทางมือ (Hand Gesture) | คำสั่งการทำงาน (Action) |
-| :--- | :--- |
-| 🖐️ **กางมือ 5 นิ้ว** | ซูมขยายหน้าเว็บเข้า (Zoom In) |
-| ✊ **กำมือ** | ซูมย่อหน้าเว็บออก (Zoom Out) |
-| ✌️ **ชู 2 นิ้ว (ชี้-กลาง)** | เลื่อนหน้าเว็บลง (Scroll Down) |
-| 🤞 **งอนิ้วซูมลง** | เลื่อนหน้าเว็บขึ้น (Scroll Up) |
-| 👌 **ทำมือ OK** | หยุดการเลื่อนหน้าเว็บ (Pause Scroll) |
+| ท่าทางมือ (Hand Gesture) | ไอคอนบนปุ่ม (Dynamic Icon) | คำสั่งการทำงาน (Action) |
+| :--- | :---: | :--- |
+| 🖐️ **กางมือ 5 นิ้ว** | 🖐️ | ซูมขยายหน้าเว็บเข้า (Zoom In) |
+| ✊ **กำมือ** | ✊ | ซูมย่อหน้าเว็บออก (Zoom Out) |
+| ✋ **ไม่พบมือ / มือปกติ** | ✋ | สแตนด์บายพร้อมรับคำสั่ง |
 
-> 💡 **Tip:** สามารถเปิด/ปิด หรือพับเก็บหน้าต่างกล้องที่มุมขวาล่างได้โดยการกดปุ่ม ✋
+> 💡 **วิธีเปิดใช้งานระบบ Hand Control:**
+> 1. กดปุ่มไอคอน ✋ ที่มุมขวาล่างเพื่อเปิดแถบควบคุม Hand Control Dock
+> 2. กดปุ่ม **"เริ่มเปิดกล้อง 📹"** และกดอนุญาต (Allow) ให้เบราว์เซอร์เข้าถึงกล้อง Webcam
+> 3. ยกมือขึ้นมาหน้ากล้อง ปุ่มไอคอนขวาล่างจะเปลี่ยนรูปทรงและเริ่มปรับการซูมตามท่าทางมือทันที
 
 ---
 
-## 🚀 วิธีการเปิดใช้งาน (Getting Started)
+## 🚀 วิธีการใช้งาน (Getting Started)
 
-1. Clone หรือ Download Repository นี้ลงเครื่องของคุณ
-2. เปิดไฟล์ `index.html` ผ่านเว็บเบราว์เซอร์ (แนะนำให้ใช้ Google Chrome หรือ Edge)
-3. อนุญาตให้หน้าเว็บเข้าถึงกล้อง (Webcam) เพื่อใช้งานระบบ Hand Control
+1. คัดลอกโค้ดไฟล์ `index.html` (V7) ทั้งหมดไปวางในโปรเจกต์ของคุณ
+2. บันทึกไฟล์และเปิดใช้งานผ่าน Web Browser (แนะนำ Google Chrome, Microsoft Edge หรือ Safari)
+3. ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต เพื่อให้หน้าเว็บโหลดไลบรารี Three.js และ MediaPipe ผ่าน CDNs ได้อย่างสมบูรณ์
 
 ---
 
