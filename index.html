@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>KHON — THE 3D DIGITAL EXHIBITION (V10 IMAGE GRID)</title>
+<title>KHON — THE 3D DIGITAL EXHIBITION</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,17 +17,17 @@
 
 <style>
 /* =====================================================
-   DESIGN SYSTEM & ATMOSPHERIC BACKGROUNDS
+   DESIGN SYSTEM & MURAL BACKGROUND
 ===================================================== */
 :root {
-    --bg-main: #0a0606;
-    --bg-dark-paper: #120b0c;
+    --bg-main: #0c0808;
+    --bg-dark-paper: rgba(18, 11, 12, 0.85);
     --gold-primary: #d4af37;
     --gold-bright: #f8e596;
     --gold-dim: rgba(212, 175, 55, 0.25);
     --burgundy: #7a1f1d;
     --ivory-white: #f5efe2;
-    --ivory-muted: rgba(245, 239, 226, 0.7);
+    --ivory-muted: rgba(245, 239, 226, 0.75);
     --glass-bg: rgba(18, 11, 12, 0.75);
     --glass-border: rgba(212, 175, 55, 0.35);
     
@@ -46,18 +46,19 @@ html, body {
     overflow-x: hidden;
 }
 
-/* BACKGROUND TEXTURE: THAI MURAL PAINTING OVERLAY */
+/* FULL-SCREEN MURAL BACKGROUND OVERLAY */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: -1;
-    opacity: 0.12;
-    background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80');
+    opacity: 0.25; /* ความชัดเจนของภาพพื้นหลังจิตรกรรมฝาผนัง */
+    background-image: url('images/mural-bg.jpg'); /* เปลี่ยนลิงก์ภาพจิตรกรรมไทยของคุณที่นี่ */
     background-size: cover;
     background-position: center;
-    filter: sepia(0.8) contrast(1.2) brightness(0.5);
+    background-repeat: no-repeat;
+    filter: sepia(0.3) contrast(1.1) brightness(0.6);
 }
 
 #zoom-wrapper {
@@ -66,7 +67,7 @@ body::before {
     width: 100%;
 }
 
-/* TYPOGRAPHY HIERARCHY */
+/* TYPOGRAPHY */
 h1.hero-title {
     font-family: var(--font-en-display);
     font-size: clamp(3.2rem, 7vw, 6.5rem);
@@ -74,7 +75,7 @@ h1.hero-title {
     line-height: 0.95;
     letter-spacing: 0.05em;
     color: var(--ivory-white);
-    text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    text-shadow: 0 10px 30px rgba(0,0,0,0.9);
 }
 
 h1.hero-title span {
@@ -131,8 +132,6 @@ p.body-text {
     font-size: 0.9rem;
     text-decoration: none;
     border-radius: 4px;
-    position: relative;
-    overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -143,7 +142,7 @@ p.body-text {
     color: var(--gold-bright);
 }
 
-/* HERO SECTION WITH BATTLE FOG ATMOSPHERE */
+/* HERO SECTION */
 .hero-section {
     min-height: 100vh;
     padding: 120px 6% 60px;
@@ -151,8 +150,7 @@ p.body-text {
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
     position: relative;
-    background: radial-gradient(circle at 30% 50%, rgba(122, 31, 29, 0.35) 0%, rgba(10, 6, 6, 0.85) 70%),
-                linear-gradient(180deg, rgba(10,6,6,0.4) 0%, rgba(10,6,6,1) 100%);
+    background: radial-gradient(circle at 30% 50%, rgba(122, 31, 29, 0.4) 0%, rgba(10, 6, 6, 0.85) 70%);
 }
 
 .hero-3d-container {
@@ -194,8 +192,6 @@ p.body-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
-    overflow: hidden;
 }
 
 .editorial-card:hover {
@@ -204,7 +200,7 @@ p.body-text {
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
-/* REAL IMAGE CARD CONTAINER */
+/* REAL IMAGE CARDS */
 .card-img-real {
     width: 100%;
     height: 260px;
@@ -229,11 +225,6 @@ p.body-text {
     position: absolute;
     inset: 0;
     background: linear-gradient(0deg, rgba(18, 11, 12, 0.9) 0%, rgba(18, 11, 12, 0.2) 60%, transparent 100%);
-    transition: opacity 0.3s ease;
-}
-
-.editorial-card:hover .card-img-real::before {
-    background: linear-gradient(0deg, rgba(18, 11, 12, 0.75) 0%, transparent 100%);
 }
 
 .card-img-real span {
@@ -243,13 +234,7 @@ p.body-text {
     text-shadow: 0 2px 10px rgba(0,0,0,0.9);
 }
 
-/* MURAL ARCHITECTURE BACKGROUND FOR CRAFT SECTION */
-.mural-bg-section {
-    background: linear-gradient(180deg, rgba(10,6,6,0.9) 0%, rgba(20,13,14,0.95) 100%),
-                radial-gradient(circle at center, rgba(122, 31, 29, 0.2) 0%, transparent 80%);
-}
-
-/* GAME STYLES */
+/* GAME SECTION */
 .game-card {
     background: var(--bg-dark-paper);
     border: 1px solid var(--gold-primary);
@@ -258,7 +243,7 @@ p.body-text {
     max-width: 700px;
     margin: 30px auto 0;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
 }
 
 .quiz-options {
@@ -330,7 +315,7 @@ p.body-text {
     cursor: pointer;
 }
 
-/* DYNAMIC HAND CONTROL TRIGGER */
+/* HAND CONTROL FLOATING SYSTEM */
 #hand-toggle-btn {
     position: fixed;
     right: 25px;
@@ -349,12 +334,10 @@ p.body-text {
     cursor: pointer;
     z-index: 8000;
     box-shadow: 0 10px 25px rgba(0,0,0,0.8);
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
-#hand-toggle-btn:hover {
-    transform: scale(1.1);
-}
+#hand-toggle-btn:hover { transform: scale(1.1); }
 
 #hand-dock {
     position: fixed;
@@ -446,67 +429,67 @@ p.body-text {
         <div class="cards-grid">
             <div class="editorial-card">
                 <div>
-                    <div class="card-img-real" style="background-image: url('uploaded:image.png-7bdca702-4f84-434a-b409-56dc2ca0c1ff');">
+                    <div class="card-img-real" style="background-image: url('images/rama.jpg');">
                         <span>PHRA RAM</span>
                     </div>
                     <span class="sub-tag" style="font-size: 0.7rem;">THE DIVINE HERO</span>
                     <h3 class="card-title">พระราม</h3>
                     <p class="body-text">อวตารพระนารายณ์ สีกายเขียวใบแค สวมมงกุฎชัย ท่ารำสง่างามตามจารีตตัวพระ...</p>
                 </div>
-                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('พระราม (Phra Ram)', 'ตามคัมภีร์นาฏศิลป์กรมศิลปากร พระรามเป็นอวตารลำดับที่ 7 ของพระนารายณ์ เอกลักษณ์คือสีกายเขียวใบแค (เขียวเข้มสด) ทรงมงกุฎชัย ท่ารำของตัวพระใช้จีบกว้าง การตั้งวงสอดเข่าอย่างปราณีต สะท้อนถึงบุคลิกแห่งกษัตริย์ผู้ทรงธรรม')">READ MORE →</button>
+                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('พระราม (Phra Ram)', 'ตามคัมภีร์นาฏศิลป์กรมศิลปากร พระรามเป็นอวตารลำดับที่ 7 ของพระนารายณ์ เอกลักษณ์คือสีกายเขียวใบแค ทรงมงกุฎชัย ท่ารำใช้จีบกว้างและการสอดเข่าสง่างาม')">READ MORE →</button>
             </div>
 
             <div class="editorial-card">
                 <div>
-                    <div class="card-img-real" style="background-image: url('uploaded:image.png-ce05ef9d-3f03-466f-965c-4dc62c0fc77e');">
+                    <div class="card-img-real" style="background-image: url('images/sida.jpg');">
                         <span>NANG SIDA</span>
                     </div>
                     <span class="sub-tag" style="font-size: 0.7rem;">THE ROYAL CONSORT</span>
                     <h3 class="card-title">นางสีดา</h3>
                     <p class="body-text">อัครมเหสี อวตารแห่งพระลักษมี สีกายขาวนวล ทรงมงกุฎกษัตรี ท่ารำตัวนางนุ่มนวล...</p>
                 </div>
-                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('นางสีดา (Nang Sida)', 'นางเอกในเรื่องรามเกียรติ์ อวตารจากพระลักษมี สีกายขาวนวล เครื่องแต่งกายทรงกษัตรีมงกุฎกษัตรี ท่ารำตัวนางตามนาฏศิลป์ไทยกรมศิลปากรเน้นความนุ่มนวล การเอียงศีรษะ หลบเอว และเอียงไหล่อย่างชดช้อยสวยงาม')">READ MORE →</button>
+                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('นางสีดา (Nang Sida)', 'นางเอกในเรื่องรามเกียรติ์ อวตารจากพระลักษมี สีกายขาวนวล เครื่องแต่งกายทรงกษัตรีมงกุฎกษัตรี ท่ารำตัวนางเน้นความนุ่มนวลชดช้อย')">READ MORE →</button>
             </div>
 
             <div class="editorial-card">
                 <div>
-                    <div class="card-img-real" style="background-image: url('uploaded:image.png-60b0da8c-2466-4a60-95b0-91387506ec0a');">
+                    <div class="card-img-real" style="background-image: url('images/hanuman.jpg');">
                         <span>HANUMAN</span>
                     </div>
                     <span class="sub-tag" style="font-size: 0.7rem;">THE MONKEY WARRIOR</span>
                     <h3 class="card-title">หนุมาน</h3>
                     <p class="body-text">พญาวานรเผือก กายสีขาว มีเขี้ยวแก้ว หาวเป็นดาวเป็นเดือน หัวโขนหน้าลิงปากอ้า/หุบ...</p>
                 </div>
-                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('หนุมาน (Hanuman)', 'พญาวานรเผือก ทหารเอกแห่งกองทัพพระราม มีเอกลักษณ์คือหัวโขนสีขาวเผือก มีเขี้ยวแก้วกลางเพดานปาก กรมศิลปากรแบ่งหน้ากากหนุมานเป็นหลายแผลง เช่น หน้าปากอ้าและหน้าปากหุบ ท่ารำตัวลิงเน้นความโลดโผน ว่องไว คล่องแคล่ว')">READ MORE →</button>
+                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('หนุมาน (Hanuman)', 'พญาวานรเผือก ทหารเอกแห่งกองทัพพระราม มีเอกลักษณ์คือหัวโขนสีขาวเผือก มีเขี้ยวแก้วกลางเพดานปาก ท่ารำโลดโผนว่องไว')">READ MORE →</button>
             </div>
 
             <div class="editorial-card">
                 <div>
-                    <div class="card-img-real" style="background-image: url('uploaded:image.png-01447797-9267-4432-be8f-60e5c2818b92');">
+                    <div class="card-img-real" style="background-image: url('images/thossakan.jpg');">
                         <span>THOSSAKAN</span>
                     </div>
                     <span class="sub-tag" style="font-size: 0.7rem;">THE DEMON KING</span>
                     <h3 class="card-title">ทศกัณฐ์</h3>
                     <p class="body-text">พญายักษ์แห่งลงกา สีกายเขียว ทรงมงกุฎยอดชัย/ยอดกระหนก มีสิบหน้ายี่สิบมือ...</p>
                 </div>
-                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('ทศกัณฐ์ (Thossakan)', 'พญายักษ์ผู้ครองกรุงลงกา สีกายเขียวสด มงกุฎประดับชั้นหน้ายักษ์ซ้อนขึ้นไปสะท้อนถึงการมี 10 หน้า 20 มือ ท่ารำของตัวยักษ์ตามแบบแผนกรมศิลปากรจะใช้การตบเท้า การกระทืบเท้า การกางตัวน่าเกรงขาม เพื่อแสดงพลังอำนาจ')">READ MORE →</button>
+                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('ทศกัณฐ์ (Thossakan)', 'พญายักษ์ผู้ครองกรุงลงกา สีกายเขียวสด มงกุฎประดับชั้นหน้ายักษ์ซ้อนขึ้นไป สะท้อนถึงพลังอำนาจและความเกรงขาม')">READ MORE →</button>
             </div>
 
             <div class="editorial-card">
                 <div>
-                    <div class="card-img-real" style="background-image: url('uploaded:image.png-820f9775-d337-463d-bf96-9e9ff5ee783f');">
+                    <div class="card-img-real" style="background-image: url('images/piphek.jpg');">
                         <span>PIPHEK</span>
                     </div>
                     <span class="sub-tag" style="font-size: 0.7rem;">THE ASTROLOGER</span>
                     <h3 class="card-title">พิเภก</h3>
                     <p class="body-text">พญายักษ์ฝ่ายดี น้องทศกัณฐ์ สีกายหงสบาท (ส้มอ่อน) ทรงมงกุฎจำหลัก เป็นโหราจารย์...</p>
                 </div>
-                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('พิเภก (Piphek)', 'ยักษ์พฤฒาจารย์ผู้เป็นน้องชายของทศกัณฐ์ สีกายหงสบาท (สีส้มอมชมพู) สวมมงกุฎยอดตัด/น้ำเต้า ท่ารำเรียบร้อย สำรวม นุ่มนวลกว่ายักษ์เสนาทั่วไป สะท้อนถึงความเป็นผู้รู้และโหราจารย์ประจำกองทัพ')">READ MORE →</button>
+                <button class="btn-glass" style="margin-top: 20px; width: 100%; justify-content: center;" onclick="openModal('พิเภก (Piphek)', 'ยักษ์พฤฒาจารย์ผู้เป็นน้องชายของทศกัณฐ์ สีกายหงสบาท (สีส้มอมชมพู) สวมมงกุฎยอดตัด ท่ารำเรียบร้อยสำรวม')">READ MORE →</button>
             </div>
         </div>
     </section>
 
-    <section id="craft" class="section-block mural-bg-section">
+    <section id="craft" class="section-block">
         <span class="sub-tag">Master Artisan</span>
         <h2 class="section-title">ภูมิปัญญาการทำหัวโขน (ช่างสิบหมู่)</h2>
         <p class="body-text">กระบวนการประดิดประดอยหัวโขนตามแบบแผนสำนักช่างสิบหมู่ กรมศิลปากร</p>
@@ -532,11 +515,11 @@ p.body-text {
         <h2 class="section-title" style="text-align: center;">เกมทายตัวละครจากอัตลักษณ์หัวโขน</h2>
 
         <div class="game-card">
-            <div class="card-img-real" style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 50%; background-image: url('uploaded:image.png-5fb691e6-a573-4eb1-a00d-3ece6f8a02a0');"></div>
+            <div class="card-img-real" style="width: 120px; height: 120px; margin: 0 auto 20px; border-radius: 50%; background-image: url('images/quiz-head.jpg');"></div>
             <h3 class="card-title">คำถาม: "หัวโขนสีกายเขียวใบแค สวมมงกุฎชัย เป็นเอกลักษณ์ของใคร?"</h3>
             
             <div class="quiz-options">
-                <button class="quiz-btn" onclick="checkAnswer(false, 'พระราม คือคำตอบที่ถูกต้อง!')">ทศกัณฐ์</button>
+                <button class="quiz-btn" onclick="checkAnswer(false, 'ยังไม่ถูกต้อง ทศกัณฐ์มีมงกุฎยอดกระหนก/ยอดชัยซ้อนหน้ายักษ์')">ทศกัณฐ์</button>
                 <button class="quiz-btn" onclick="checkAnswer(true, 'ถูกต้อง! พระราม มีสีกายเขียวใบแคและทรงมงกุฎชัย')">พระราม</button>
                 <button class="quiz-btn" onclick="checkAnswer(false, 'ยังไม่ถูกต้อง หนุมานมีกายสีขาวเผือก')">หนุมาน</button>
                 <button class="quiz-btn" onclick="checkAnswer(false, 'ยังไม่ถูกต้อง พิเภกมีกายสีหงสบาท (ส้มอ่อน)')">พิเภก</button>
@@ -574,9 +557,7 @@ p.body-text {
 </div>
 
 <script>
-/* =====================================================
-   THREE.JS HIGH-DETAIL DEMON MASK MODEL (FROM IMAGE)
-===================================================== */
+/* THREE.JS 3D MASK MODEL */
 const canvas3D = document.getElementById('canvas-3d');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(45, canvas3D.clientWidth / canvas3D.clientHeight, 0.1, 1000);
@@ -587,46 +568,25 @@ renderer.shadowMap.enabled = true;
 
 const khonMaskGroup = new THREE.Group();
 
-// Materials
-const goldMaterial = new THREE.MeshStandardMaterial({
-    color: 0xd4af37,
-    metalness: 0.9,
-    roughness: 0.2,
-    envMapIntensity: 1.2
-});
+const goldMaterial = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.9, roughness: 0.2 });
+const darkDemonFaceMat = new THREE.MeshStandardMaterial({ color: 0x1f1416, roughness: 0.4 });
+const greenPatternMat = new THREE.MeshStandardMaterial({ color: 0x2e6b3b, roughness: 0.3 });
+const whiteTuskMat = new THREE.MeshStandardMaterial({ color: 0xf5efe2, roughness: 0.1 });
 
-const darkDemonFaceMat = new THREE.MeshStandardMaterial({
-    color: 0x1f1416,
-    roughness: 0.4,
-    metalness: 0.2
-});
-
-const greenPatternMat = new THREE.MeshStandardMaterial({
-    color: 0x2e6b3b,
-    roughness: 0.3,
-    metalness: 0.1
-});
-
-const whiteTuskMat = new THREE.MeshStandardMaterial({
-    color: 0xf5efe2,
-    roughness: 0.1,
-    metalness: 0.1
-});
-
-// 1. Mask Base
+// Head Base
 const headGeo = new THREE.SphereGeometry(1.2, 32, 32);
 headGeo.scale(1, 1.25, 0.95);
 const headMesh = new THREE.Mesh(headGeo, darkDemonFaceMat);
 khonMaskGroup.add(headMesh);
 
-// Green Kanok Face Lines
+// Green Lines
 const lineGeo = new THREE.TorusGeometry(0.85, 0.05, 12, 32, Math.PI);
 const greenLine = new THREE.Mesh(lineGeo, greenPatternMat);
 greenLine.position.set(0, -0.1, 0.7);
 greenLine.rotation.x = Math.PI / 3;
 khonMaskGroup.add(greenLine);
 
-// 2. Demon Tusks
+// Tusks
 function createTusk(isLeft) {
     const tuskGeo = new THREE.CylinderGeometry(0.02, 0.08, 0.5, 12);
     const tusk = new THREE.Mesh(tuskGeo, whiteTuskMat);
@@ -638,7 +598,7 @@ function createTusk(isLeft) {
 khonMaskGroup.add(createTusk(true));
 khonMaskGroup.add(createTusk(false));
 
-// 3. Tiered Crown
+// Crown Spire
 const crownBaseGeo = new THREE.CylinderGeometry(0.95, 1.15, 0.45, 16);
 const crownBase = new THREE.Mesh(crownBaseGeo, goldMaterial);
 crownBase.position.y = 1.4;
@@ -651,26 +611,14 @@ for (let i = 0; i < 5; i++) {
     khonMaskGroup.add(tier);
 }
 
-// Spire Tip
 const tipGeo = new THREE.ConeGeometry(0.12, 1.4, 12);
 const tip = new THREE.Mesh(tipGeo, goldMaterial);
 tip.position.y = 4.1;
 khonMaskGroup.add(tip);
 
-// 4. Floral Garland Side Accent
-const garlandGroup = new THREE.Group();
-for(let k = 0; k < 4; k++) {
-    const flowerGeo = new THREE.SphereGeometry(0.1, 8, 8);
-    const flower = new THREE.Mesh(flowerGeo, whiteTuskMat);
-    flower.position.y = - (k * 0.18);
-    garlandGroup.add(flower);
-}
-garlandGroup.position.set(-1.15, 0.6, 0.2);
-khonMaskGroup.add(garlandGroup);
-
 scene.add(khonMaskGroup);
 
-// Studio Lighting
+// Lighting
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 scene.add(ambientLight);
 
@@ -685,7 +633,6 @@ scene.add(fillLight);
 camera.position.z = 7.5;
 camera.position.y = 1;
 
-// Mouse Movement Effect
 let mouseX = 0, mouseY = 0;
 document.addEventListener('mousemove', (e) => {
     mouseX = (e.clientX / window.innerWidth - 0.5) * 0.6;
@@ -707,7 +654,7 @@ window.addEventListener('resize', () => {
     renderer.setSize(canvas3D.clientWidth, canvas3D.clientHeight);
 });
 
-/* MODAL CONTROLLER */
+/* MODAL & QUIZ LOGIC */
 function openModal(title, content) {
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-body').textContent = content;
@@ -718,19 +665,13 @@ function closeModal() {
     document.getElementById('detail-modal').classList.remove('active');
 }
 
-/* QUIZ GAME LOGIC */
 function checkAnswer(isCorrect, message) {
     const res = document.getElementById('quiz-result');
-    if(isCorrect) {
-        res.style.color = '#f8e596';
-        res.textContent = '✓ ' + message;
-    } else {
-        res.style.color = '#7a1f1d';
-        res.textContent = '✕ ' + message;
-    }
+    res.style.color = isCorrect ? '#f8e596' : '#7a1f1d';
+    res.textContent = (isCorrect ? '✓ ' : '✕ ') + message;
 }
 
-/* ZOOM MATRIX */
+/* ZOOM & HAND TRACKING */
 let zoom = 1;
 const zoomWrapper = document.getElementById('zoom-wrapper');
 const zoomValText = document.getElementById('zoom-val');
@@ -746,9 +687,6 @@ function toggleHandDock() {
     document.getElementById('hand-dock').classList.toggle('show');
 }
 
-/* =====================================================
-   HAND TRACKING & ADAPTIVE ICON LOGIC
-===================================================== */
 const video = document.getElementById("webcam");
 const canvas = document.getElementById("hand-canvas");
 const ctx = canvas.getContext("2d");
@@ -767,14 +705,12 @@ function onHandResults(results) {
     if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
         statusText.textContent = "กำลังตรวจจับมือ...";
         handBtn.textContent = "✋";
-        handBtn.style.borderColor = "var(--gold-primary)";
         return;
     }
 
     const lm = results.multiHandLandmarks[0];
     if (typeof drawConnectors === "function") drawConnectors(ctx, lm, HAND_CONNECTIONS, {color: "#d4af37", lineWidth: 2});
 
-    // Gesture Checks
     const isOpenHand = (lm[8].y < lm[6].y && lm[12].y < lm[10].y && lm[16].y < lm[14].y && lm[20].y < lm[18].y && distance(lm[4], lm[8]) > 0.12);
     const isFist = (lm[8].y > lm[6].y && lm[12].y > lm[10].y && lm[16].y > lm[14].y && lm[20].y > lm[18].y);
 
@@ -782,21 +718,17 @@ function onHandResults(results) {
         applyZoom(0.008);
         statusText.textContent = "🖐️ กางมือ — ซูมเข้า";
         handBtn.textContent = "🖐️";
-        handBtn.style.borderColor = "#f8e596";
     } else if (isFist) {
         applyZoom(-0.008);
         statusText.textContent = "✊ กำมือ — ซูมออก";
         handBtn.textContent = "✊";
-        handBtn.style.borderColor = "#7a1f1d";
     } else {
         statusText.textContent = "ตรวจพบมือพร้อมใช้งาน";
         handBtn.textContent = "✋";
-        handBtn.style.borderColor = "var(--gold-primary)";
     }
 }
 
 let hands = null;
-let cameraUtils = null;
 
 function initMediaPipe() {
     if (typeof Hands === "function") {
@@ -810,25 +742,15 @@ async function startCamera() {
     if (!hands) initMediaPipe();
     statusText.textContent = "กำลังเปิดกล้อง...";
     try {
-        if (typeof Camera === "function") {
-            cameraUtils = new Camera(video, {
-                onFrame: async () => { await hands.send({ image: video }); },
-                width: 640,
-                height: 480
-            });
-            await cameraUtils.start();
-            statusText.textContent = "กล้องทำงานปกติ";
-        } else {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
-            video.srcObject = stream;
-            await video.play();
-            statusText.textContent = "กล้องทำงานปกติ";
-            function process() {
-                if(video.readyState >= 2) hands.send({ image: video });
-                requestAnimationFrame(process);
-            }
-            process();
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        video.srcObject = stream;
+        await video.play();
+        statusText.textContent = "กล้องทำงานปกติ";
+        function process() {
+            if(video.readyState >= 2) hands.send({ image: video });
+            requestAnimationFrame(process);
         }
+        process();
     } catch(e) {
         statusText.textContent = "ไม่สามารถเข้าถึงกล้องได้";
     }
