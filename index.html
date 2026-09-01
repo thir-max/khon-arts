@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
 
 <meta charset="UTF-8">
 
 <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
+name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
 <title>KHON — ศิลปะการแสดงโขน</title>
 
 <meta
-    name="description"
-    content="เว็บไซต์ Interactive Art เกี่ยวกับศิลปะการแสดงโขนไทย"
+name="description"
+content="เว็บไซต์ Interactive Art เกี่ยวกับศิลปะการแสดงโขนไทย"
 >
 
 
 <!-- =====================================================
-     GOOGLE FONTS
+     GOOGLE FONT
 ===================================================== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Kanit:wght@300;400;500;600&family=Pridi:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Kanit:wght@300;400;500;600&family=Pridi:wght@300;400;500;600&display=swap"
+rel="stylesheet"
 >
 
 
@@ -41,25 +35,25 @@
 ===================================================== -->
 
 <script
-    src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
-    crossorigin="anonymous">
+src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+crossorigin="anonymous">
 </script>
 
 <script
-    src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
-    crossorigin="anonymous">
+src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+crossorigin="anonymous">
 </script>
 
 <script
-    src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"
-    crossorigin="anonymous">
+src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"
+crossorigin="anonymous">
 </script>
 
 
 <style>
 
 /* =====================================================
-   ROOT
+   VARIABLES
 ===================================================== */
 
 :root{
@@ -93,18 +87,18 @@ body{
     margin:0;
 
     background:
-        radial-gradient(
-            circle at 20% 10%,
-            rgba(198,160,90,.18),
-            transparent 30%
-        ),
+    radial-gradient(
+        circle at 20% 10%,
+        rgba(198,160,90,.18),
+        transparent 30%
+    ),
 
-        linear-gradient(
-            135deg,
-            #e7d7b5,
-            #f4ead2,
-            #ddc89e
-        );
+    linear-gradient(
+        135deg,
+        #e7d7b5,
+        #f4ead2,
+        #ddc89e
+    );
 
     color:var(--dark);
 
@@ -134,30 +128,13 @@ body::before{
     opacity:.08;
 
     background-image:
-        radial-gradient(
-            rgba(80,50,30,.8) 1px,
-            transparent 1px
-        );
+
+    radial-gradient(
+        rgba(80,50,30,.8) 1px,
+        transparent 1px
+    );
 
     background-size:5px 5px;
-
-}
-
-
-/* =====================================================
-   PAGE
-===================================================== */
-
-#page{
-
-    transform-origin:
-        center top;
-
-    transform:
-        scale(1);
-
-    transition:
-        transform .12s ease-out;
 
 }
 
@@ -174,8 +151,7 @@ body::before{
 
     left:50%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     width:min(1100px,92%);
 
@@ -189,21 +165,17 @@ body::before{
 
     z-index:100;
 
-    background:
-        rgba(248,239,216,.9);
+    background:rgba(248,239,216,.9);
 
-    backdrop-filter:
-        blur(12px);
+    backdrop-filter:blur(12px);
 
-    border:
-        1px solid
-        rgba(91,57,43,.25);
+    border:1px solid rgba(91,57,43,.25);
 
     border-radius:50px;
 
     box-shadow:
-        0 10px 30px
-        rgba(50,30,20,.12);
+    0 10px 30px
+    rgba(50,30,20,.12);
 
 }
 
@@ -260,6 +232,21 @@ body::before{
 
 
 /* =====================================================
+   PAGE
+===================================================== */
+
+#page{
+
+    transform-origin:center top;
+
+    transform:scale(1);
+
+    transition:transform .15s ease-out;
+
+}
+
+
+/* =====================================================
    HERO
 ===================================================== */
 
@@ -267,13 +254,11 @@ body::before{
 
     min-height:100vh;
 
-    padding:
-        130px 6% 70px;
+    padding:130px 6% 70px;
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:50px;
 
@@ -283,9 +268,7 @@ body::before{
 
 
 .hero-text{
-
     max-width:600px;
-
 }
 
 
@@ -306,15 +289,13 @@ body::before{
 
     font-family:"Charmonman";
 
-    font-size:
-        clamp(70px,12vw,150px);
+    font-size:clamp(70px,12vw,150px);
 
     line-height:.8;
 
     color:var(--red);
 
-    margin:
-        20px 0;
+    margin:20px 0;
 
 }
 
@@ -368,18 +349,17 @@ body::before{
 
 .button:hover{
 
-    transform:
-        translateY(-4px);
+    transform:translateY(-4px);
 
     box-shadow:
-        0 10px 25px
-        rgba(123,48,40,.25);
+    0 10px 25px
+    rgba(123,48,40,.25);
 
 }
 
 
 /* =====================================================
-   KHON STAGE
+   STAGE
 ===================================================== */
 
 .stage{
@@ -392,20 +372,18 @@ body::before{
 
     border-radius:30px;
 
-    border:
-        8px solid
-        #3a241d;
+    border:8px solid #3a241d;
 
     background:
-        radial-gradient(
-            circle at 50% 30%,
-            #68432e,
-            #211312 65%
-        );
+    radial-gradient(
+        circle at 50% 30%,
+        #68432e,
+        #211312 65%
+    );
 
     box-shadow:
-        0 25px 60px
-        rgba(40,20,15,.3);
+    0 25px 60px
+    rgba(40,20,15,.3);
 
 }
 
@@ -421,12 +399,12 @@ body::before{
     width:23%;
 
     background:
-        repeating-linear-gradient(
-            90deg,
-            #642820 0px,
-            #8a372b 16px,
-            #672820 32px
-        );
+    repeating-linear-gradient(
+        90deg,
+        #642820 0px,
+        #8a372b 16px,
+        #672820 32px
+    );
 
     z-index:5;
 
@@ -438,12 +416,12 @@ body::before{
     left:0;
 
     clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            78% 100%,
-            0 100%
-        );
+    polygon(
+        0 0,
+        100% 0,
+        78% 100%,
+        0 100%
+    );
 
 }
 
@@ -453,19 +431,15 @@ body::before{
     right:0;
 
     clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            100% 100%,
-            22% 100%
-        );
+    polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        22% 100%
+    );
 
 }
 
-
-/* =====================================================
-   LAMP
-===================================================== */
 
 .lamp{
 
@@ -475,8 +449,7 @@ body::before{
 
     left:50%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     width:85px;
 
@@ -485,19 +458,18 @@ body::before{
     border-radius:50%;
 
     background:
-        radial-gradient(
-            circle,
-            #ffe49a,
-            #a45d2f 70%
-        );
+    radial-gradient(
+        circle,
+        #ffe49a,
+        #a45d2f 70%
+    );
 
     box-shadow:
-        0 0 60px
-        rgba(255,208,110,.7);
+    0 0 60px
+    rgba(255,208,110,.7);
 
     animation:
-        lampGlow 2s
-        infinite alternate;
+    lampGlow 2s infinite alternate;
 
 }
 
@@ -531,14 +503,11 @@ body::before{
 
     height:400px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     animation:
-        performerMove
-        4s
-        infinite
-        ease-in-out;
+    performerMove
+    4s infinite ease-in-out;
 
 }
 
@@ -548,18 +517,18 @@ body::before{
     0%,100%{
 
         transform:
-            translateX(-50%)
-            translateY(0)
-            rotate(-1deg);
+        translateX(-50%)
+        translateY(0)
+        rotate(-1deg);
 
     }
 
     50%{
 
         transform:
-            translateX(-50%)
-            translateY(-10px)
-            rotate(1deg);
+        translateX(-50%)
+        translateY(-10px)
+        rotate(1deg);
 
     }
 
@@ -578,14 +547,12 @@ body::before{
 
     height:90px;
 
-    border-radius:
-        50% 50% 45% 45%;
+    border-radius:50% 50% 45% 45%;
 
     background:#d6a94e;
 
     box-shadow:
-        0 0 0 6px
-        #291714;
+    0 0 0 6px #291714;
 
 }
 
@@ -605,19 +572,19 @@ body::before{
     background:#c59a4a;
 
     clip-path:
-        polygon(
-            50% 0,
-            65% 25%,
-            95% 15%,
-            78% 50%,
-            100% 65%,
-            55% 100%,
-            40% 55%,
-            0 70%,
-            20% 40%,
-            5% 15%,
-            38% 28%
-        );
+    polygon(
+        50% 0,
+        65% 25%,
+        95% 15%,
+        78% 50%,
+        100% 65%,
+        55% 100%,
+        40% 55%,
+        0 70%,
+        20% 40%,
+        5% 15%,
+        38% 28%
+    );
 
 }
 
@@ -637,12 +604,12 @@ body::before{
     background:#8b4735;
 
     clip-path:
-        polygon(
-            20% 0,
-            80% 0,
-            100% 100%,
-            0 100%
-        );
+    polygon(
+        20% 0,
+        80% 0,
+        100% 100%,
+        0 100%
+    );
 
 }
 
@@ -668,14 +635,7 @@ body::before{
 
     left:-5px;
 
-    transform:
-        rotate(25deg);
-
-    animation:
-        armLeft
-        2.5s
-        infinite
-        ease-in-out;
+    transform:rotate(25deg);
 
 }
 
@@ -684,34 +644,7 @@ body::before{
 
     right:-5px;
 
-    transform:
-        rotate(-25deg);
-
-    animation:
-        armRight
-        2.5s
-        infinite
-        ease-in-out;
-
-}
-
-
-@keyframes armLeft{
-
-    50%{
-        transform:
-            rotate(45deg);
-    }
-
-}
-
-
-@keyframes armRight{
-
-    50%{
-        transform:
-            rotate(-45deg);
-    }
+    transform:rotate(-25deg);
 
 }
 
@@ -737,8 +670,7 @@ body::before{
 
     left:95px;
 
-    transform:
-        rotate(7deg);
+    transform:rotate(7deg);
 
 }
 
@@ -747,20 +679,18 @@ body::before{
 
     left:165px;
 
-    transform:
-        rotate(-7deg);
+    transform:rotate(-7deg);
 
 }
 
 
 /* =====================================================
-   SECTION
+   SECTIONS
 ===================================================== */
 
 .section{
 
-    padding:
-        110px 7%;
+    padding:110px 7%;
 
 }
 
@@ -780,13 +710,11 @@ body::before{
 
     font-family:"Charmonman";
 
-    font-size:
-        clamp(45px,7vw,75px);
+    font-size:clamp(45px,7vw,75px);
 
     color:var(--red);
 
-    margin:
-        10px 0 20px;
+    margin:10px 0 20px;
 
 }
 
@@ -815,7 +743,7 @@ body::before{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+    repeat(3,1fr);
 
     gap:20px;
 
@@ -829,17 +757,16 @@ body::before{
     padding:28px;
 
     background:
-        rgba(248,239,216,.75);
+    rgba(248,239,216,.75);
 
     border:
-        1px solid
-        rgba(91,57,43,.2);
+    1px solid rgba(91,57,43,.2);
 
     border-radius:25px;
 
     box-shadow:
-        0 10px 30px
-        rgba(50,30,20,.08);
+    0 10px 30px
+    rgba(50,30,20,.08);
 
 }
 
@@ -900,8 +827,7 @@ body::before{
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:35px;
 
@@ -921,8 +847,8 @@ body::before{
     border-radius:30px;
 
     box-shadow:
-        0 20px 50px
-        rgba(30,15,10,.3);
+    0 20px 50px
+    rgba(30,15,10,.3);
 
 }
 
@@ -950,16 +876,11 @@ body::before{
 
     height:165px;
 
-    border-radius:
-        50% 50% 45% 45%;
+    border-radius:50% 50% 45% 45%;
 
     background:#3c9366;
 
     position:relative;
-
-    box-shadow:
-        inset 0 -15px 0
-        #276c4b;
 
 }
 
@@ -1002,8 +923,7 @@ body::before{
 
     top:85px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     width:45px;
 
@@ -1020,8 +940,7 @@ body::before{
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:12px;
 
@@ -1032,9 +951,7 @@ body::before{
 
     padding:14px;
 
-    border:
-        1px solid
-        var(--gold);
+    border:1px solid var(--gold);
 
     background:transparent;
 
@@ -1082,17 +999,6 @@ body::before{
 }
 
 
-@media(max-width:850px){
-
-    .game-area{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-
 /* =====================================================
    VISUAL
 ===================================================== */
@@ -1108,15 +1014,15 @@ body::before{
     border-radius:30px;
 
     background:
-        linear-gradient(
-            180deg,
-            #634632,
-            #241714
-        );
+    linear-gradient(
+        180deg,
+        #634632,
+        #241714
+    );
 
     box-shadow:
-        0 20px 50px
-        rgba(40,20,15,.25);
+    0 20px 50px
+    rgba(40,20,15,.25);
 
 }
 
@@ -1137,10 +1043,6 @@ body::before{
 
     background:#d5b265;
 
-    box-shadow:
-        0 0 70px
-        rgba(213,178,101,.4);
-
 }
 
 
@@ -1159,17 +1061,17 @@ body::before{
     background:#1c1210;
 
     clip-path:
-        polygon(
-            0 100%,
-            0 65%,
-            18% 35%,
-            32% 70%,
-            50% 25%,
-            65% 60%,
-            80% 30%,
-            100% 70%,
-            100% 100%
-        );
+    polygon(
+        0 100%,
+        0 65%,
+        18% 35%,
+        32% 70%,
+        50% 25%,
+        65% 60%,
+        80% 30%,
+        100% 70%,
+        100% 100%
+    );
 
 }
 
@@ -1183,7 +1085,7 @@ body::before{
     display:grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+    repeat(4,1fr);
 
     gap:15px;
 
@@ -1218,29 +1120,6 @@ body::before{
 }
 
 
-@media(max-width:850px){
-
-    .facts{
-
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
-}
-
-
-@media(max-width:600px){
-
-    .facts{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-
 /* =====================================================
    HAND PANEL
 ===================================================== */
@@ -1249,43 +1128,56 @@ body::before{
 
     position:fixed;
 
-    width:280px;
+    right:15px;
 
-    right:18px;
+    bottom:15px;
 
-    bottom:18px;
+    width:290px;
 
     z-index:5000;
 
-    padding:12px;
-
     background:
-        rgba(30,20,17,.96);
+    rgba(30,20,17,.96);
 
     border:
-        1px solid
-        var(--gold);
+    1px solid var(--gold);
 
     border-radius:20px;
+
+    padding:12px;
 
     color:white;
 
     box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.35);
+    0 15px 40px
+    rgba(0,0,0,.35);
 
     transition:
-        box-shadow .2s ease,
-        opacity .2s ease;
+    transform .3s ease,
+    opacity .3s ease;
+
+    touch-action:none;
+
+}
+
+
+/* กล้องถูกซ่อนออกนอกจอ */
+
+#hand-panel.offscreen{
+
+    transform:
+    translateX(
+        calc(100% + 40px)
+    );
 
 }
 
 
 /* =====================================================
-   CAMERA HEADER
+   DRAG HANDLE
 ===================================================== */
 
-#hand-header{
+#drag-handle{
 
     display:flex;
 
@@ -1293,20 +1185,16 @@ body::before{
 
     justify-content:space-between;
 
-    gap:8px;
-
-    margin-bottom:10px;
-
     cursor:grab;
 
     user-select:none;
 
-    touch-action:none;
+    padding:4px 4px 8px;
 
 }
 
 
-#hand-header:active{
+#drag-handle:active{
 
     cursor:grabbing;
 
@@ -1317,61 +1205,44 @@ body::before{
 
     font-family:"Charmonman";
 
-    font-size:21px;
-
     color:#e6bd67;
 
-}
-
-
-#camera-buttons{
-
-    display:flex;
-
-    gap:5px;
+    font-size:21px;
 
 }
 
 
-.camera-btn{
+#drag-icon{
 
-    width:29px;
+    font-size:18px;
 
-    height:29px;
-
-    border:
-        1px solid
-        var(--gold);
-
-    border-radius:50%;
-
-    background:#38231e;
-
-    color:#f5e7c6;
-
-    cursor:pointer;
-
-    font-size:14px;
-
-    padding:0;
-
-}
-
-
-.camera-btn:hover{
-
-    background:var(--red);
+    opacity:.7;
 
 }
 
 
 /* =====================================================
-   CAMERA BOX
+   STATUS
+===================================================== */
+
+#hand-status{
+
+    font-size:12px;
+
+    opacity:.9;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =====================================================
+   CAMERA
 ===================================================== */
 
 #camera-box{
 
-    height:155px;
+    height:165px;
 
     position:relative;
 
@@ -1402,181 +1273,84 @@ body::before{
 
 #webcam{
 
-    transform:
-        scaleX(-1);
+    transform:scaleX(-1);
 
 }
 
 
 #hand-canvas{
 
-    transform:
-        scaleX(-1);
+    transform:scaleX(-1);
 
 }
 
 
 /* =====================================================
-   STATUS
+   HELP
 ===================================================== */
 
-#hand-status{
+#hand-help{
 
     margin-top:8px;
 
-    font-size:12px;
+    font-size:10px;
+
+    line-height:1.7;
 
     color:#dfceb0;
 
-    min-height:18px;
-
-}
-
-
-#hand-help{
-
-    margin-top:7px;
-
-    font-size:10px;
-
-    line-height:1.6;
-
-    color:#cdbfa5;
-
 }
 
 
 /* =====================================================
-   MINIMIZED
+   RESTORE CAMERA
 ===================================================== */
 
-#hand-panel.minimized{
-
-    width:210px;
-
-}
-
-
-#hand-panel.minimized
-#camera-box{
-
-    height:70px;
-
-}
-
-
-#hand-panel.minimized
-#hand-help{
-
-    display:none;
-
-}
-
-
-/* =====================================================
-   OFF SCREEN
-===================================================== */
-
-#hand-panel.offscreen{
-
-    opacity:.98;
-
-}
-
-
-/*
-   เมื่อหลุดออกด้านขวา
-*/
-
-#hand-panel.off-right{
-
-    right:auto;
-
-    left:calc(100vw - 32px);
-
-}
-
-
-/*
-   เมื่อหลุดออกด้านซ้าย
-*/
-
-#hand-panel.off-left{
-
-    right:auto;
-
-    left:-248px;
-
-}
-
-
-/* =====================================================
-   EDGE RETURN BUTTON
-===================================================== */
-
-#edge-return{
+#restore-camera{
 
     position:fixed;
 
-    top:50%;
+    right:0;
 
-    transform:
-        translateY(-50%);
+    bottom:90px;
 
-    width:42px;
+    z-index:4900;
 
-    height:92px;
+    border:none;
 
-    z-index:6000;
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border:
-        1px solid
-        var(--gold);
+    padding:11px 14px;
 
     background:
-        rgba(37,22,20,.97);
+    rgba(74,33,28,.96);
 
-    color:#e6bd67;
+    color:#f5e7c6;
+
+    border:
+    1px solid var(--gold);
+
+    border-radius:
+    15px 0 0 15px;
 
     cursor:pointer;
 
-    font-size:22px;
+    display:none;
 
     box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.3);
+    0 10px 25px
+    rgba(0,0,0,.25);
 
 }
 
 
-#edge-return.right{
+#restore-camera.show{
 
-    right:0;
-
-    border-radius:
-        18px 0 0 18px;
-
-}
-
-
-#edge-return.left{
-
-    left:0;
-
-    border-radius:
-        0 18px 18px 0;
+    display:block;
 
 }
 
 
 /* =====================================================
-   ZOOM BOX
+   ZOOM
 ===================================================== */
 
 #zoom-box{
@@ -1587,14 +1361,14 @@ body::before{
 
     bottom:15px;
 
-    z-index:3000;
+    z-index:4000;
 
     padding:8px 15px;
 
     border-radius:20px;
 
     background:
-        rgba(248,239,216,.9);
+    rgba(248,239,216,.9);
 
     font-size:12px;
 
@@ -1615,22 +1389,66 @@ body::before{
 
     border-radius:50%;
 
-    border:
-        3px solid
-        #e4bd67;
+    border:3px solid #e4bd67;
 
     box-shadow:
-        0 0 20px
-        rgba(228,189,103,.8);
+    0 0 20px
+    rgba(228,189,103,.8);
 
     pointer-events:none;
 
-    z-index:7000;
+    z-index:8000;
 
     display:none;
 
     transform:
-        translate(-50%,-50%);
+    translate(-50%,-50%);
+
+}
+
+
+/* =====================================================
+   GESTURE INDICATOR
+===================================================== */
+
+#gesture-indicator{
+
+    position:fixed;
+
+    left:50%;
+
+    top:85px;
+
+    transform:translateX(-50%);
+
+    z-index:3000;
+
+    padding:9px 18px;
+
+    border-radius:30px;
+
+    background:
+    rgba(37,22,20,.9);
+
+    color:#f5e7c6;
+
+    border:
+    1px solid var(--gold);
+
+    font-size:13px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.2s;
+
+}
+
+
+#gesture-indicator.show{
+
+    opacity:1;
 
 }
 
@@ -1641,14 +1459,13 @@ body::before{
 
 footer{
 
-    padding:
-        70px 20px;
+    padding:70px 20px;
 
     text-align:center;
 
     border-top:
-        1px solid
-        rgba(91,57,43,.2);
+    1px solid
+    rgba(91,57,43,.2);
 
     font-family:"Pridi";
 
@@ -1661,27 +1478,40 @@ footer{
    MOBILE
 ===================================================== */
 
+@media(max-width:850px){
+
+    .game-area{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .facts{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+
 @media(max-width:600px){
 
     #hand-panel{
 
-        width:220px;
-
-        right:10px;
-
-        bottom:10px;
+        width:235px;
 
     }
 
     #camera-box{
 
-        height:120px;
+        height:125px;
 
     }
 
-    #hand-title{
+    .facts{
 
-        font-size:18px;
+        grid-template-columns:1fr;
 
     }
 
@@ -1703,7 +1533,16 @@ footer{
 
 
 <!-- =====================================================
-     ZOOM INDICATOR
+     GESTURE INDICATOR
+===================================================== -->
+
+<div id="gesture-indicator">
+    พร้อม
+</div>
+
+
+<!-- =====================================================
+     ZOOM
 ===================================================== -->
 
 <div id="zoom-box">
@@ -1721,8 +1560,8 @@ footer{
 <nav class="nav">
 
     <a
-        href="#home"
-        class="logo">
+    href="#home"
+    class="logo">
 
         โขน • KHON
 
@@ -1764,8 +1603,8 @@ footer{
 ===================================================== -->
 
 <section
-    id="home"
-    class="hero">
+id="home"
+class="hero">
 
     <div class="hero-text">
 
@@ -1775,13 +1614,11 @@ footer{
 
         </div>
 
-
         <h1>
 
             KHON
 
         </h1>
-
 
         <h2>
 
@@ -1789,7 +1626,6 @@ footer{
             และทุกท่วงท่ากลายเป็นภาษา
 
         </h2>
-
 
         <p>
 
@@ -1800,10 +1636,9 @@ footer{
 
         </p>
 
-
         <a
-            href="#story"
-            class="button">
+        href="#story"
+        class="button">
 
             เริ่มสำรวจ ↓
 
@@ -1849,18 +1684,16 @@ footer{
 ===================================================== -->
 
 <section
-    id="story"
-    class="section">
+id="story"
+class="section">
 
     <div class="section-label">
         01 / ORIGIN
     </div>
 
-
     <h2 class="section-title">
         โขนคืออะไร?
     </h2>
-
 
     <p class="section-intro">
 
@@ -1943,6 +1776,7 @@ footer{
 
         </article>
 
+
     </div>
 
 </section>
@@ -1953,13 +1787,12 @@ footer{
 ===================================================== -->
 
 <section
-    id="elements"
-    class="section">
+id="elements"
+class="section">
 
     <div class="section-label">
         02 / ELEMENTS
     </div>
-
 
     <h2 class="section-title">
         องค์ประกอบของโขน
@@ -2080,8 +1913,8 @@ footer{
 ===================================================== -->
 
 <section
-    id="game"
-    class="section">
+id="game"
+class="section">
 
     <div class="game-area">
 
@@ -2089,12 +1922,16 @@ footer{
         <div>
 
             <div class="section-label">
+
                 03 / GUESS THE CHARACTER
+
             </div>
 
 
             <h2 class="section-title">
+
                 หน้ากากนี้คือใคร?
+
             </h2>
 
 
@@ -2122,7 +1959,9 @@ footer{
 
                 <div class="monkey">
 
-                    <div class="monkey-face"></div>
+                    <div
+                    class="monkey-face">
+                    </div>
 
                 </div>
 
@@ -2130,11 +1969,11 @@ footer{
 
 
             <h3
-                style="
-                    text-align:center;
-                    font-family:Pridi;
-                    font-size:24px;
-                ">
+            style="
+            text-align:center;
+            font-family:Pridi;
+            font-size:24px;
+            ">
 
                 ตัวละครนี้คือใคร?
 
@@ -2143,10 +1982,9 @@ footer{
 
             <div class="choices">
 
-
                 <button
-                    class="choice"
-                    data-answer="wrong">
+                class="choice"
+                data-answer="wrong">
 
                     พระราม
 
@@ -2154,13 +1992,12 @@ footer{
 
 
                 <button
-                    class="choice"
-                    data-answer="correct">
+                class="choice"
+                data-answer="correct">
 
                     หนุมาน
 
                 </button>
-
 
             </div>
 
@@ -2169,10 +2006,10 @@ footer{
 
 
             <a
-                id="continue-button"
-                href="#archive"
-                class="button"
-                style="display:none;">
+            id="continue-button"
+            href="#archive"
+            class="button"
+            style="display:none;">
 
                 ไปยังเนื้อหาเว็บไซต์ →
 
@@ -2190,16 +2027,20 @@ footer{
 ===================================================== -->
 
 <section
-    id="archive"
-    class="section">
+id="archive"
+class="section">
 
     <div class="section-label">
+
         04 / VISUAL ARCHIVE
+
     </div>
 
 
     <h2 class="section-title">
+
         โลกของโขน
+
     </h2>
 
 
@@ -2279,12 +2120,16 @@ footer{
 <section class="section">
 
     <div class="section-label">
+
         05 / CHARACTERS
+
     </div>
 
 
     <h2 class="section-title">
+
         ตัวละครสำคัญ
+
     </h2>
 
 
@@ -2363,69 +2208,28 @@ footer{
 
 
 <!-- =====================================================
-     EDGE RETURN BUTTON
-===================================================== -->
-
-<button
-    id="edge-return"
-    aria-label="เรียกกล้องกลับ">
-
-    ◀
-
-</button>
-
-
-<!-- =====================================================
-     FLOATING CAMERA
+     HAND PANEL
 ===================================================== -->
 
 <div id="hand-panel">
 
 
-    <div id="hand-header">
-
+    <div id="drag-handle">
 
         <div id="hand-title">
-
             ✋ Hand Control
-
         </div>
 
-
-        <div id="camera-buttons">
-
-
-            <button
-                class="camera-btn"
-                id="minimize-camera"
-                title="ย่อกล้อง">
-
-                −
-
-            </button>
-
-
-            <button
-                class="camera-btn"
-                id="hide-camera"
-                title="ซ่อนกล้อง">
-
-                ×
-
-            </button>
-
-
-            <button
-                class="camera-btn"
-                id="reset-camera"
-                title="รีเซ็ต">
-
-                ↺
-
-            </button>
-
-
+        <div id="drag-icon">
+            ⋮⋮
         </div>
+
+    </div>
+
+
+    <div id="hand-status">
+
+        กำลังโหลดระบบ...
 
     </div>
 
@@ -2433,47 +2237,54 @@ footer{
     <div id="camera-box">
 
         <video
-            id="webcam"
-            autoplay
-            playsinline
-            muted>
+        id="webcam"
+        autoplay
+        playsinline
+        muted>
         </video>
 
 
         <canvas
-            id="hand-canvas">
+        id="hand-canvas">
         </canvas>
-
-    </div>
-
-
-    <div id="hand-status">
-
-        กำลังเตรียมกล้อง...
 
     </div>
 
 
     <div id="hand-help">
 
-        ✌️ กางชี้ + กลาง = เลื่อนลง
+        ✌️ ชี้ + กลางกาง = เลื่อนลง
         <br>
 
-        🤏 หุบชี้ + กลาง = เลื่อนขึ้น
+        🤞 ชี้ + กลางหุบ = เลื่อนขึ้น
         <br>
 
         👌 OK = หยุด
         <br>
 
-        🖐️ กางมือ = Zoom เข้า
+        🖐️ กางมือ = ซูมเข้า
         <br>
 
-        ✊ กำมือ = Zoom ออก
+        ✊ กำมือ = ซูมออก
+        <br>
+
+        📌 ลากหัวกล้อง = ย้ายกล้อง
 
     </div>
 
-
 </div>
+
+
+<!-- =====================================================
+     RESTORE CAMERA
+===================================================== -->
+
+<button
+id="restore-camera">
+
+    📹 เปิดกล้อง
+
+</button>
 
 
 <script>
@@ -2483,13 +2294,13 @@ footer{
 ===================================================== */
 
 const choices =
-    document.querySelectorAll(".choice");
+document.querySelectorAll(".choice");
 
 const answer =
-    document.getElementById("answer");
+document.getElementById("answer");
 
 const continueButton =
-    document.getElementById("continue-button");
+document.getElementById("continue-button");
 
 
 choices.forEach(function(button){
@@ -2511,20 +2322,20 @@ choices.forEach(function(button){
             ){
 
                 answer.textContent =
-                    "✓ เฉลย: หนุมาน";
+                "✓ เฉลย: หนุมาน";
 
             }
 
             else{
 
                 answer.textContent =
-                    "✕ ยังไม่ถูก — เฉลยคือ หนุมาน";
+                "✕ ยังไม่ถูก — เฉลยคือ หนุมาน";
 
             }
 
 
             continueButton.style.display =
-                "inline-block";
+            "inline-block";
 
         }
     );
@@ -2537,43 +2348,37 @@ choices.forEach(function(button){
 ===================================================== */
 
 const video =
-    document.getElementById("webcam");
+document.getElementById("webcam");
 
 const canvas =
-    document.getElementById("hand-canvas");
+document.getElementById("hand-canvas");
 
 const ctx =
-    canvas.getContext("2d");
+canvas.getContext("2d");
 
 const statusText =
-    document.getElementById("hand-status");
+document.getElementById("hand-status");
 
 const cursor =
-    document.getElementById("gesture-cursor");
+document.getElementById("gesture-cursor");
+
+const indicator =
+document.getElementById("gesture-indicator");
 
 const page =
-    document.getElementById("page");
+document.getElementById("page");
 
 const zoomText =
-    document.getElementById("zoom-value");
+document.getElementById("zoom-value");
 
 const panel =
-    document.getElementById("hand-panel");
+document.getElementById("hand-panel");
 
-const header =
-    document.getElementById("hand-header");
+const dragHandle =
+document.getElementById("drag-handle");
 
-const edgeReturn =
-    document.getElementById("edge-return");
-
-const minimizeButton =
-    document.getElementById("minimize-camera");
-
-const hideButton =
-    document.getElementById("hide-camera");
-
-const resetButton =
-    document.getElementById("reset-camera");
+const restoreButton =
+document.getElementById("restore-camera");
 
 
 /* =====================================================
@@ -2586,101 +2391,29 @@ const MIN_ZOOM = .75;
 
 const MAX_ZOOM = 1.7;
 
-let lastZoomTime = 0;
 
+/* =====================================================
+   SCROLL
+===================================================== */
 
-/*
-   ใช้ transform กับ #page
-   ไม่ใช้ body.zoom
-   เพื่อไม่ให้ Floating Camera พัง
-*/
+let lastGestureY = null;
 
-function setZoom(value){
+let stableGesture = "NONE";
 
-    zoom =
-        Math.max(
-            MIN_ZOOM,
-            Math.min(
-                MAX_ZOOM,
-                value
-            )
-        );
+let gestureStartTime = 0;
 
-
-    page.style.transform =
-        "scale(" + zoom + ")";
-
-
-    zoomText.textContent =
-        Math.round(zoom * 100) + "%";
-
-}
-
-
-function zoomIn(){
-
-    const now =
-        Date.now();
-
-
-    if(now - lastZoomTime < 80)
-        return;
-
-
-    lastZoomTime =
-        now;
-
-
-    setZoom(
-        zoom + .012
-    );
-
-}
-
-
-function zoomOut(){
-
-    const now =
-        Date.now();
-
-
-    if(now - lastZoomTime < 80)
-        return;
-
-
-    lastZoomTime =
-        now;
-
-
-    setZoom(
-        zoom - .012
-    );
-
-}
+let lastScrollTime = 0;
 
 
 /* =====================================================
-   GESTURE VARIABLES
+   SETTINGS
 ===================================================== */
 
-let hands = null;
+const SCROLL_SPEED = 1300;
 
+const SCROLL_DEAD_ZONE = .008;
 
-/*
-   Gesture stability
-*/
-
-let detectedGesture =
-    "NONE";
-
-let stableGesture =
-    "NONE";
-
-let gestureCount =
-    0;
-
-const STABILITY_FRAMES =
-    4;
+const SCROLL_INTERVAL = 25;
 
 
 /* =====================================================
@@ -2690,54 +2423,44 @@ const STABILITY_FRAMES =
 function distance(a,b){
 
     const dx =
-        a.x - b.x;
+    a.x - b.x;
 
     const dy =
-        a.y - b.y;
-
-    const dz =
-        (a.z || 0) -
-        (b.z || 0);
-
+    a.y - b.y;
 
     return Math.sqrt(
         dx * dx +
-        dy * dy +
-        dz * dz
+        dy * dy
     );
 
 }
 
 
 /* =====================================================
-   FINGER DETECTION
+   FINGER STATE
 ===================================================== */
 
-function fingerUp(
-    lm,
-    tip,
-    pip
-){
+function fingers(lm){
 
-    return (
-        lm[tip].y <
-        lm[pip].y
-    );
+    return {
 
-}
+        index:
+        lm[8].y <
+        lm[6].y,
 
+        middle:
+        lm[12].y <
+        lm[10].y,
 
-/*
-   นิ้วโป้งตรวจด้วยตำแหน่ง x
-   เพราะนิ้วโป้งกางด้านข้าง
-*/
+        ring:
+        lm[16].y <
+        lm[14].y,
 
-function thumbExtended(lm){
+        pinky:
+        lm[20].y <
+        lm[18].y
 
-    return (
-        distance(lm[4],lm[2]) >
-        distance(lm[3],lm[2]) * 1.15
-    );
+    };
 
 }
 
@@ -2746,63 +2469,41 @@ function thumbExtended(lm){
    OK GESTURE
 ===================================================== */
 
-function isOKGesture(lm){
-
-    /*
-       ปลายนิ้วโป้ง + ชี้แตะกัน
-    */
+function isOK(lm){
 
     const thumbIndex =
-        distance(
-            lm[4],
-            lm[8]
-        );
+    distance(
+        lm[4],
+        lm[8]
+    );
 
-
-    /*
-       นิ้วกลาง
-    */
 
     const middle =
-        fingerUp(
-            lm,
-            12,
-            10
-        );
+    lm[12].y <
+    lm[10].y;
 
-
-    /*
-       นิ้วนาง
-    */
 
     const ring =
-        fingerUp(
-            lm,
-            16,
-            14
-        );
+    lm[16].y <
+    lm[14].y;
+
+
+    const pinky =
+    lm[20].y <
+    lm[18].y;
 
 
     /*
-       นิ้วก้อย
+       นิ้วโป้งกับนิ้วชี้แตะกัน
+       และอีกสามนิ้วกาง
     */
-
-    const pinky =
-        fingerUp(
-            lm,
-            20,
-            18
-        );
-
 
     return (
 
-        thumbIndex < .10 &&
+        thumbIndex < .075 &&
 
         middle &&
-
         ring &&
-
         pinky
 
     );
@@ -2816,32 +2517,25 @@ function isOKGesture(lm){
 
 function isOpenHand(lm){
 
-    const index =
-        fingerUp(lm,8,6);
-
-    const middle =
-        fingerUp(lm,12,10);
-
-    const ring =
-        fingerUp(lm,16,14);
-
-    const pinky =
-        fingerUp(lm,20,18);
+    const f =
+    fingers(lm);
 
 
-    /*
-       มือเปิดทั้งหมด
-       แต่ต้องไม่ใช่ OK
-    */
+    const thumbIndex =
+    distance(
+        lm[4],
+        lm[8]
+    );
+
 
     return (
 
-        index &&
-        middle &&
-        ring &&
-        pinky &&
+        f.index &&
+        f.middle &&
+        f.ring &&
+        f.pinky &&
 
-        !isOKGesture(lm)
+        thumbIndex > .12
 
     );
 
@@ -2854,55 +2548,16 @@ function isOpenHand(lm){
 
 function isFist(lm){
 
-    const index =
-        fingerUp(lm,8,6);
-
-    const middle =
-        fingerUp(lm,12,10);
-
-    const ring =
-        fingerUp(lm,16,14);
-
-    const pinky =
-        fingerUp(lm,20,18);
-
-
-    return (
-        !index &&
-        !middle &&
-        !ring &&
-        !pinky
-    );
-
-}
-
-
-/* =====================================================
-   TWO FINGER DOWN
-===================================================== */
-
-function isTwoFingerOpen(lm){
-
-    const index =
-        fingerUp(lm,8,6);
-
-    const middle =
-        fingerUp(lm,12,10);
-
-    const ring =
-        fingerUp(lm,16,14);
-
-    const pinky =
-        fingerUp(lm,20,18);
+    const f =
+    fingers(lm);
 
 
     return (
 
-        index &&
-        middle &&
-
-        !ring &&
-        !pinky
+        !f.index &&
+        !f.middle &&
+        !f.ring &&
+        !f.pinky
 
     );
 
@@ -2910,40 +2565,45 @@ function isTwoFingerOpen(lm){
 
 
 /* =====================================================
-   TWO FINGER CLOSED
+   TWO FINGER GESTURE
 ===================================================== */
 
-function isTwoFingerClosed(lm){
+function getTwoFingerState(lm){
 
-    const index =
-        fingerUp(lm,8,6);
-
-    const middle =
-        fingerUp(lm,12,10);
-
-    const ring =
-        fingerUp(lm,16,14);
-
-    const pinky =
-        fingerUp(lm,20,18);
+    const f =
+    fingers(lm);
 
 
     /*
-       ต้องหุบชี้ + กลาง
-       แต่ถ้ากำทั้งมือ = Zoom Out
+       ต้องเป็นชี้ + กลาง
+       โดย ring + pinky ต้องหุบ
     */
 
-    return (
+    if(
+        f.index &&
+        f.middle &&
+        !f.ring &&
+        !f.pinky
+    ){
 
-        !index &&
-        !middle &&
+        return "TWO_OPEN";
 
-        (
-            ring ||
-            pinky
-        )
+    }
 
-    );
+
+    if(
+        !f.index &&
+        !f.middle &&
+        !f.ring &&
+        !f.pinky
+    ){
+
+        return "TWO_CLOSED";
+
+    }
+
+
+    return "NONE";
 
 }
 
@@ -2955,70 +2615,68 @@ function isTwoFingerClosed(lm){
 function getGesture(lm){
 
     /*
-       1. OK ก่อน
+       สำคัญมาก
+
+       OK ถูกตรวจจับก่อน
+       เพราะถ้าตรวจ open hand ก่อน
+       ระบบอาจตีความท่า OK ผิด
     */
 
     if(
-        isOKGesture(lm)
+        isOK(lm)
     ){
 
-        return "STOP";
+        return "OK";
 
     }
 
 
     /*
-       2. กางมือ
-       → Zoom In
+       กางมือทั้งหมด
+       = Zoom In
     */
 
     if(
         isOpenHand(lm)
     ){
 
-        return "ZOOM_IN";
+        return "OPEN";
 
     }
 
 
     /*
-       3. กำมือ
-       → Zoom Out
+       กำมือ
+       = Zoom Out
     */
 
     if(
         isFist(lm)
     ){
 
-        return "ZOOM_OUT";
+        return "FIST";
 
     }
 
 
-    /*
-       4. ชี้ + กลางกาง
-       → Scroll Down
-    */
+    const two =
+    getTwoFingerState(lm);
+
 
     if(
-        isTwoFingerOpen(lm)
+        two === "TWO_OPEN"
     ){
 
-        return "DOWN";
+        return "TWO_OPEN";
 
     }
 
 
-    /*
-       5. ชี้ + กลางหุบ
-       → Scroll Up
-    */
-
     if(
-        isTwoFingerClosed(lm)
+        two === "TWO_CLOSED"
     ){
 
-        return "UP";
+        return "TWO_CLOSED";
 
     }
 
@@ -3029,231 +2687,183 @@ function getGesture(lm){
 
 
 /* =====================================================
-   STABLE GESTURE
+   GESTURE DISPLAY
 ===================================================== */
 
-function getStableGesture(newGesture){
+function showGesture(text){
+
+    indicator.textContent =
+    text;
+
+    indicator.classList.add(
+        "show"
+    );
+
+}
+
+
+function hideGesture(){
+
+    indicator.classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   ZOOM
+===================================================== */
+
+function updateZoom(direction){
 
     if(
-        newGesture ===
-        detectedGesture
+        direction === "IN"
     ){
 
-        gestureCount++;
+        zoom += .006;
 
     }
+
+
+    if(
+        direction === "OUT"
+    ){
+
+        zoom -= .006;
+
+    }
+
+
+    zoom =
+    Math.max(
+        MIN_ZOOM,
+        Math.min(
+            MAX_ZOOM,
+            zoom
+        )
+    );
+
+
+    page.style.transform =
+    "scale(" +
+    zoom +
+    ")";
+
+
+    zoomText.textContent =
+    Math.round(
+        zoom * 100
+    ) + "%";
+
+}
+
+
+/* =====================================================
+   TWO FINGER SCROLL
+===================================================== */
+
+function twoFingerScroll(lm){
+
+    const y =
+    (
+        lm[8].y +
+        lm[12].y
+    ) / 2;
+
+
+    if(
+        lastGestureY === null
+    ){
+
+        lastGestureY =
+        y;
+
+        return;
+
+    }
+
+
+    const movement =
+    y -
+    lastGestureY;
+
+
+    const now =
+    performance.now();
+
+
+    if(
+        Math.abs(movement)
+        < SCROLL_DEAD_ZONE
+    ){
+
+        lastGestureY =
+        y;
+
+        return;
+
+    }
+
+
+    if(
+        now - lastScrollTime <
+        SCROLL_INTERVAL
+    ){
+
+        return;
+
+    }
+
+
+    lastScrollTime =
+    now;
+
+
+    /*
+       นิ้วเคลื่อนขึ้น
+       → เว็บเลื่อนลง
+    */
+
+    if(
+        movement < 0
+    ){
+
+        window.scrollBy({
+
+            top:
+            Math.abs(movement)
+            * SCROLL_SPEED,
+
+            behavior:"auto"
+
+        });
+
+    }
+
+
+    /*
+       นิ้วเคลื่อนลง
+       → เว็บเลื่อนขึ้น
+    */
 
     else{
 
-        detectedGesture =
-            newGesture;
+        window.scrollBy({
 
-        gestureCount = 1;
+            top:
+            -Math.abs(movement)
+            * SCROLL_SPEED,
 
-    }
+            behavior:"auto"
 
-
-    if(
-        gestureCount >=
-        STABILITY_FRAMES
-    ){
-
-        stableGesture =
-            detectedGesture;
+        });
 
     }
 
 
-    return stableGesture;
-
-}
-
-
-/* =====================================================
-   SCROLL
-===================================================== */
-
-let lastScrollTime = 0;
-
-
-/*
-   ความเร็วเลื่อน
-*/
-
-const SCROLL_SPEED =
-    8;
-
-
-function scrollDown(){
-
-    const now =
-        Date.now();
-
-
-    if(
-        now - lastScrollTime <
-        16
-    ){
-
-        return;
-
-    }
-
-
-    lastScrollTime =
-        now;
-
-
-    window.scrollBy(
-        0,
-        SCROLL_SPEED
-    );
-
-}
-
-
-function scrollUp(){
-
-    const now =
-        Date.now();
-
-
-    if(
-        now - lastScrollTime <
-        16
-    ){
-
-        return;
-
-    }
-
-
-    lastScrollTime =
-        now;
-
-
-    window.scrollBy(
-        0,
-        -SCROLL_SPEED
-    );
-
-}
-
-
-/* =====================================================
-   HANDLE GESTURE
-===================================================== */
-
-function handleGesture(gesture){
-
-    /*
-       ✌️
-    */
-
-    if(
-        gesture === "DOWN"
-    ){
-
-        scrollDown();
-
-        cursor.style.display =
-            "block";
-
-        statusText.textContent =
-            "✌️ กางนิ้วชี้ + กลาง — เลื่อนลง";
-
-        return;
-
-    }
-
-
-    /*
-       🤏
-    */
-
-    if(
-        gesture === "UP"
-    ){
-
-        scrollUp();
-
-        cursor.style.display =
-            "block";
-
-        statusText.textContent =
-            "🤏 หุบนิ้วชี้ + กลาง — เลื่อนขึ้น";
-
-        return;
-
-    }
-
-
-    /*
-       👌
-    */
-
-    if(
-        gesture === "STOP"
-    ){
-
-        cursor.style.display =
-            "none";
-
-        statusText.textContent =
-            "👌 OK — หยุด";
-
-        return;
-
-    }
-
-
-    /*
-       🖐️
-    */
-
-    if(
-        gesture === "ZOOM_IN"
-    ){
-
-        zoomIn();
-
-        cursor.style.display =
-            "none";
-
-        statusText.textContent =
-            "🖐️ กางมือ — Zoom เข้า";
-
-        return;
-
-    }
-
-
-    /*
-       ✊
-    */
-
-    if(
-        gesture === "ZOOM_OUT"
-    ){
-
-        zoomOut();
-
-        cursor.style.display =
-            "none";
-
-        statusText.textContent =
-            "✊ กำมือ — Zoom ออก";
-
-        return;
-
-    }
-
-
-    cursor.style.display =
-        "none";
-
-    statusText.textContent =
-        "✋ เตรียมท่ามือ";
+    lastGestureY =
+    y;
 
 }
 
@@ -3310,18 +2920,18 @@ function drawHand(lm){
 
 
 /* =====================================================
-   MEDIAPIPE RESULTS
+   RESULTS
 ===================================================== */
 
 function onResults(results){
 
     canvas.width =
-        video.videoWidth ||
-        640;
+    video.videoWidth ||
+    640;
 
     canvas.height =
-        video.videoHeight ||
-        480;
+    video.videoHeight ||
+    480;
 
 
     ctx.clearRect(
@@ -3332,28 +2942,21 @@ function onResults(results){
     );
 
 
-    /*
-       ไม่มีมือ
-    */
-
     if(
         !results.multiHandLandmarks ||
         results.multiHandLandmarks.length === 0
     ){
 
         statusText.textContent =
-            "ไม่พบมือ";
+        "ไม่พบมือ";
 
         cursor.style.display =
-            "none";
+        "none";
 
-        detectedGesture =
-            "NONE";
+        lastGestureY =
+        null;
 
-        gestureCount = 0;
-
-        stableGesture =
-            "NONE";
+        hideGesture();
 
         return;
 
@@ -3361,72 +2964,176 @@ function onResults(results){
 
 
     const lm =
-        results.multiHandLandmarks[0];
+    results.multiHandLandmarks[0];
 
 
     drawHand(lm);
 
 
-    /*
-       หาท่า
-    */
-
-    const rawGesture =
-        getGesture(lm);
-
-
-    /*
-       ทำให้คำสั่งนิ่ง
-    */
-
     const gesture =
-        getStableGesture(
-            rawGesture
-        );
+    getGesture(lm);
 
 
-    /*
-       Cursor สำหรับ ✌️ / 🤏
-    */
+    /* =================================================
+       OK
+    ================================================= */
 
     if(
-        gesture === "DOWN" ||
-        gesture === "UP"
+        gesture === "OK"
     ){
 
-        const index =
-            lm[8];
+        lastGestureY =
+        null;
 
+        cursor.style.display =
+        "none";
 
-        const x =
-            (1 - index.x) *
-            window.innerWidth;
+        statusText.textContent =
+        "👌 OK — หยุดการเลื่อน";
 
+        showGesture(
+            "👌 หยุด"
+        );
 
-        const y =
-            index.y *
-            window.innerHeight;
-
-
-        cursor.style.left =
-            x + "px";
-
-        cursor.style.top =
-            y + "px";
+        return;
 
     }
 
 
-    handleGesture(
-        gesture
-    );
+    /* =================================================
+       OPEN HAND
+    ================================================= */
+
+    if(
+        gesture === "OPEN"
+    ){
+
+        lastGestureY =
+        null;
+
+        updateZoom(
+            "IN"
+        );
+
+        cursor.style.display =
+        "none";
+
+        statusText.textContent =
+        "🖐️ กางมือ — ซูมเข้า";
+
+        showGesture(
+            "🖐️ ซูมเข้า"
+        );
+
+        return;
+
+    }
+
+
+    /* =================================================
+       FIST
+    ================================================= */
+
+    if(
+        gesture === "FIST"
+    ){
+
+        lastGestureY =
+        null;
+
+        updateZoom(
+            "OUT"
+        );
+
+        cursor.style.display =
+        "none";
+
+        statusText.textContent =
+        "✊ กำมือ — ซูมออก";
+
+        showGesture(
+            "✊ ซูมออก"
+        );
+
+        return;
+
+    }
+
+
+    /* =================================================
+       TWO FINGER OPEN
+    ================================================= */
+
+    if(
+        gesture === "TWO_OPEN"
+    ){
+
+        twoFingerScroll(lm);
+
+        cursor.style.display =
+        "none";
+
+        statusText.textContent =
+        "✌️ สองนิ้วกาง — เลื่อนลง";
+
+        showGesture(
+            "✌️ เลื่อนลง"
+        );
+
+        return;
+
+    }
+
+
+    /* =================================================
+       TWO FINGER CLOSED
+    ================================================= */
+
+    if(
+        gesture === "TWO_CLOSED"
+    ){
+
+        twoFingerScroll(lm);
+
+        cursor.style.display =
+        "none";
+
+        statusText.textContent =
+        "🤞 สองนิ้วหุบ — เลื่อนขึ้น";
+
+        showGesture(
+            "🤞 เลื่อนขึ้น"
+        );
+
+        return;
+
+    }
+
+
+    /* =================================================
+       NONE
+    ================================================= */
+
+    lastGestureY =
+    null;
+
+    cursor.style.display =
+    "none";
+
+    statusText.textContent =
+    "พร้อมใช้งาน";
+
+    hideGesture();
 
 }
 
 
 /* =====================================================
-   CREATE HAND TRACKING
+   MEDIAPIPE
 ===================================================== */
+
+let hands = null;
+
 
 if(
     typeof Hands ===
@@ -3434,18 +3141,21 @@ if(
 ){
 
     hands =
-        new Hands({
+    new Hands({
 
-            locateFile:
-            function(file){
+        /*
+         * สำคัญ:
+         * return ต้องอยู่บรรทัดเดียวกัน
+         */
 
-                return
-                    "https://cdn.jsdelivr.net/npm/@mediapipe/hands/"
-                    + file;
+        locateFile:
+        function(file){
 
-            }
+            return "https://cdn.jsdelivr.net/npm/@mediapipe/hands/" + file;
 
-        });
+        }
+
+    });
 
 
     hands.setOptions({
@@ -3454,9 +3164,9 @@ if(
 
         modelComplexity:1,
 
-        minDetectionConfidence:.65,
+        minDetectionConfidence:.60,
 
-        minTrackingConfidence:.65
+        minTrackingConfidence:.60
 
     });
 
@@ -3480,17 +3190,19 @@ async function startCamera(){
     ){
 
         statusText.textContent =
-            "Browser ไม่รองรับกล้อง";
+        "Browser ไม่รองรับกล้อง";
 
         return;
 
     }
 
 
-    if(!hands){
+    if(
+        !hands
+    ){
 
         statusText.textContent =
-            "โหลด Hand Tracking ไม่สำเร็จ";
+        "โหลด Hand Tracking ไม่สำเร็จ";
 
         return;
 
@@ -3499,49 +3211,59 @@ async function startCamera(){
 
     try{
 
+        statusText.textContent =
+        "กำลังขออนุญาตใช้กล้อง...";
+
+
         const stream =
-            await navigator
-                .mediaDevices
-                .getUserMedia({
+        await navigator.mediaDevices.getUserMedia({
 
-                    video:{
+            video:{
 
-                        width:640,
+                width:{
+                    ideal:640
+                },
 
-                        height:480,
+                height:{
+                    ideal:480
+                },
 
-                        facingMode:"user"
+                facingMode:"user"
 
-                    },
+            },
 
-                    audio:false
+            audio:false
 
-                });
+        });
 
 
         video.srcObject =
-            stream;
+        stream;
 
 
         await video.play();
 
 
         statusText.textContent =
-            "กล้องพร้อม — ยกมือได้เลย";
+        "กล้องพร้อม — ยกมือได้เลย";
 
 
-        /*
-           ส่งภาพเข้า MediaPipe
-           ต่อเนื่องแม้กล้อง UI จะถูกซ่อน
-        */
+        let processing =
+        false;
+
 
         async function process(){
 
-            try{
+            if(
+                video.readyState >= 2 &&
+                !processing
+            ){
 
-                if(
-                    video.readyState >= 2
-                ){
+                processing =
+                true;
+
+
+                try{
 
                     await hands.send({
 
@@ -3551,14 +3273,18 @@ async function startCamera(){
 
                 }
 
-            }
+                catch(error){
 
-            catch(error){
+                    console.error(
+                        "Hand Tracking:",
+                        error
+                    );
 
-                console.error(
-                    "Hand Tracking Error:",
-                    error
-                );
+                }
+
+
+                processing =
+                false;
 
             }
 
@@ -3583,7 +3309,7 @@ async function startCamera(){
 
 
         statusText.textContent =
-            "ไม่สามารถเปิดกล้องได้";
+        "ไม่สามารถเปิดกล้องได้";
 
     }
 
@@ -3591,466 +3317,251 @@ async function startCamera(){
 
 
 /* =====================================================
-   FLOATING CAMERA
+   DRAG CAMERA PANEL
 ===================================================== */
 
-let dragging =
+let dragging = false;
+
+let dragOffsetX = 0;
+
+let dragOffsetY = 0;
+
+
+function startDrag(event){
+
+    dragging =
+    true;
+
+
+    panel.style.transition =
+    "none";
+
+
+    const point =
+    event.touches ?
+    event.touches[0] :
+    event;
+
+
+    const rect =
+    panel.getBoundingClientRect();
+
+
+    dragOffsetX =
+    point.clientX -
+    rect.left;
+
+
+    dragOffsetY =
+    point.clientY -
+    rect.top;
+
+
+    if(
+        event.preventDefault
+    ){
+
+        event.preventDefault();
+
+    }
+
+}
+
+
+function moveDrag(event){
+
+    if(
+        !dragging
+    ){
+
+        return;
+
+    }
+
+
+    const point =
+    event.touches ?
+    event.touches[0] :
+    event;
+
+
+    let x =
+    point.clientX -
+    dragOffsetX;
+
+
+    let y =
+    point.clientY -
+    dragOffsetY;
+
+
+    /*
+       อนุญาตให้ลากพ้นจอได้
+    */
+
+    panel.style.left =
+    x + "px";
+
+    panel.style.top =
+    y + "px";
+
+    panel.style.right =
+    "auto";
+
+    panel.style.bottom =
+    "auto";
+
+
+    if(
+        event.preventDefault
+    ){
+
+        event.preventDefault();
+
+    }
+
+}
+
+
+function stopDrag(){
+
+    if(
+        !dragging
+    ){
+
+        return;
+
+    }
+
+
+    dragging =
     false;
 
-let dragStartX =
-    0;
 
-let dragStartY =
-    0;
+    panel.style.transition =
+    "";
 
-let panelStartX =
-    0;
+    checkPanelOffscreen();
 
-let panelStartY =
-    0;
-
-
-/* =====================================================
-   DRAG START
-===================================================== */
-
-header.addEventListener(
-    "pointerdown",
-    function(event){
-
-        /*
-           ไม่ให้ลากเมื่อกดปุ่ม
-        */
-
-        if(
-            event.target.closest(
-                ".camera-btn"
-            )
-        ){
-
-            return;
-
-        }
-
-
-        dragging =
-            true;
-
-
-        panel.classList.add(
-            "dragging"
-        );
-
-
-        header.setPointerCapture(
-            event.pointerId
-        );
-
-
-        const rect =
-            panel.getBoundingClientRect();
-
-
-        panelStartX =
-            rect.left;
-
-        panelStartY =
-            rect.top;
-
-
-        dragStartX =
-            event.clientX;
-
-        dragStartY =
-            event.clientY;
-
-
-        /*
-           เปลี่ยนจาก right/bottom
-           เป็น left/top
-        */
-
-        panel.style.left =
-            panelStartX + "px";
-
-        panel.style.top =
-            panelStartY + "px";
-
-        panel.style.right =
-            "auto";
-
-        panel.style.bottom =
-            "auto";
-
-    }
-
-);
-
-
-/* =====================================================
-   DRAG MOVE
-===================================================== */
-
-header.addEventListener(
-    "pointermove",
-    function(event){
-
-        if(!dragging)
-            return;
-
-
-        const dx =
-            event.clientX -
-            dragStartX;
-
-
-        const dy =
-            event.clientY -
-            dragStartY;
-
-
-        panel.style.left =
-            (
-                panelStartX + dx
-            ) + "px";
-
-
-        panel.style.top =
-            (
-                panelStartY + dy
-            ) + "px";
-
-    }
-
-);
-
-
-/* =====================================================
-   DRAG END
-===================================================== */
-
-header.addEventListener(
-    "pointerup",
-    function(){
-
-        if(!dragging)
-            return;
-
-
-        dragging =
-            false;
-
-
-        panel.classList.remove(
-            "dragging"
-        );
-
-
-        checkOffscreen();
-
-    }
-
-);
+}
 
 
 /* =====================================================
    CHECK OFFSCREEN
 ===================================================== */
 
-function checkOffscreen(){
+function checkPanelOffscreen(){
 
     const rect =
-        panel.getBoundingClientRect();
+    panel.getBoundingClientRect();
 
 
-    const width =
-        window.innerWidth;
+    const completelyOutside =
 
+        rect.right < 40 ||
 
-    /*
-       หลุดด้านขวา
-    */
-
-    if(
         rect.left >
-        width - 70
-    ){
+        window.innerWidth - 40 ||
 
-        panel.classList.add(
-            "offscreen",
-            "off-right"
-        );
+        rect.bottom < 40 ||
 
-        panel.classList.remove(
-            "off-left"
-        );
+        rect.top >
+        window.innerHeight - 40;
 
-
-        edgeReturn.className =
-            "right";
-
-        edgeReturn.textContent =
-            "◀";
-
-        edgeReturn.style.display =
-            "flex";
-
-        return;
-
-    }
-
-
-    /*
-       หลุดด้านซ้าย
-    */
 
     if(
-        rect.right <
-        70
+        completelyOutside
     ){
 
         panel.classList.add(
-            "offscreen",
-            "off-left"
+            "offscreen"
         );
 
-        panel.classList.remove(
-            "off-right"
+        restoreButton.classList.add(
+            "show"
         );
-
-
-        edgeReturn.className =
-            "left";
-
-        edgeReturn.textContent =
-            "▶";
-
-        edgeReturn.style.display =
-            "flex";
-
-        return;
 
     }
-
-
-    /*
-       ไม่หลุด
-    */
-
-    panel.classList.remove(
-        "offscreen",
-        "off-left",
-        "off-right"
-    );
-
-
-    edgeReturn.style.display =
-        "none";
 
 }
 
 
 /* =====================================================
-   RETURN CAMERA
+   RESTORE CAMERA
 ===================================================== */
 
-function returnCamera(){
+function restoreCamera(){
 
     panel.classList.remove(
-        "offscreen",
-        "off-left",
-        "off-right"
+        "offscreen"
     );
 
 
     panel.style.left =
-        "auto";
+    "auto";
 
     panel.style.top =
-        "auto";
+    "auto";
 
     panel.style.right =
-        "18px";
+    "15px";
 
     panel.style.bottom =
-        "18px";
+    "15px";
 
 
-    edgeReturn.style.display =
-        "none";
+    restoreButton.classList.remove(
+        "show"
+    );
 
 }
 
 
-edgeReturn.addEventListener(
-    "click",
-    returnCamera
-);
-
-
 /* =====================================================
-   HIDE CAMERA
+   DRAG EVENTS
 ===================================================== */
 
-hideButton.addEventListener(
-    "click",
-    function(){
-
-        panel.style.left =
-            "auto";
-
-        panel.style.top =
-            "auto";
-
-        panel.style.right =
-            "-245px";
-
-        panel.style.bottom =
-            "18px";
-
-
-        panel.classList.add(
-            "offscreen",
-            "off-right"
-        );
-
-
-        edgeReturn.className =
-            "right";
-
-        edgeReturn.textContent =
-            "◀";
-
-        edgeReturn.style.display =
-            "flex";
-
-    }
-
+dragHandle.addEventListener(
+    "mousedown",
+    startDrag
 );
-
-
-/* =====================================================
-   MINIMIZE
-===================================================== */
-
-let minimized =
-    false;
-
-
-minimizeButton.addEventListener(
-    "click",
-    function(){
-
-        minimized =
-            !minimized;
-
-
-        if(minimized){
-
-            panel.classList.add(
-                "minimized"
-            );
-
-            minimizeButton.textContent =
-                "+";
-
-            minimizeButton.title =
-                "ขยายกล้อง";
-
-        }
-
-        else{
-
-            panel.classList.remove(
-                "minimized"
-            );
-
-            minimizeButton.textContent =
-                "−";
-
-            minimizeButton.title =
-                "ย่อกล้อง";
-
-        }
-
-    }
-
-);
-
-
-/* =====================================================
-   RESET CAMERA
-===================================================== */
-
-resetButton.addEventListener(
-    "click",
-    function(){
-
-        minimized =
-            false;
-
-
-        panel.classList.remove(
-            "minimized",
-            "offscreen",
-            "off-left",
-            "off-right"
-        );
-
-
-        panel.style.left =
-            "auto";
-
-        panel.style.top =
-            "auto";
-
-        panel.style.right =
-            "18px";
-
-        panel.style.bottom =
-            "18px";
-
-
-        minimizeButton.textContent =
-            "−";
-
-
-        edgeReturn.style.display =
-            "none";
-
-    }
-
-);
-
-
-/* =====================================================
-   WINDOW RESIZE
-===================================================== */
 
 window.addEventListener(
-    "resize",
-    function(){
+    "mousemove",
+    moveDrag
+);
 
-        /*
-           ถ้าหน้าจอเปลี่ยนขนาด
-           ตรวจว่ากล้องยังอยู่นอกจอหรือไม่
-        */
-
-        if(
-            panel.classList.contains(
-                "offscreen"
-            )
-        ){
-
-            return;
-
-        }
+window.addEventListener(
+    "mouseup",
+    stopDrag
+);
 
 
-        checkOffscreen();
-
+dragHandle.addEventListener(
+    "touchstart",
+    startDrag,
+    {
+        passive:false
     }
+);
 
+window.addEventListener(
+    "touchmove",
+    moveDrag,
+    {
+        passive:false
+    }
+);
+
+window.addEventListener(
+    "touchend",
+    stopDrag
+);
+
+
+restoreButton.addEventListener(
+    "click",
+    restoreCamera
 );
 
 
@@ -4062,17 +3573,20 @@ window.addEventListener(
     "load",
     function(){
 
+        /*
+           รอ CDN โหลด
+        */
+
         setTimeout(
             startCamera,
-            1200
+            1500
         );
 
     }
-
 );
 
 </script>
 
-</body>
 
+</body>
 </html>
